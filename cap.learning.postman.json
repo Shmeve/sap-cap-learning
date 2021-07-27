@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "93236d3a-f3f6-4efc-a633-a817fc616c46",
+		"name": "cap.learning",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": ".blog",
+			"item": [
+				{
+					"name": "POST /blog/Posts",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Post Title\",\n    \"body\": \"Post body text.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4004/blog/Posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"blog",
+								"Posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /blog/Comments",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"comment\": \"Comment text.\",\n    \"post_ID\": \"9a9dfd40-b3cf-4f71-bde3-8e790901a785\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4004/blog/Comments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"blog",
+								"Comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /blog/Posts/:post_ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4004/blog/Posts/9a9dfd40-b3cf-4f71-bde3-8e790901a785?$expand=comments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"blog",
+								"Posts",
+								"9a9dfd40-b3cf-4f71-bde3-8e790901a785"
+							],
+							"query": [
+								{
+									"key": "$expand",
+									"value": "comments"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": ".todo",
+			"item": []
+		}
+	]
+}
